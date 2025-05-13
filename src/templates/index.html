@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de la Calidad del Vino</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f3e9;
+            text-align: center;
+            padding: 30px;
+            color: #3e2f2f;
+        }
+
+        h2 {
+            color: #7b1e1e;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: inline-block;
+            background-color: #fff5e6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .form-container label {
+            font-size: 1em;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-container input[type="number"] {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .form-container input[type="submit"] {
+            padding: 10px;
+            width: 100%;
+            background-color: #7b1e1e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #5a1515;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #3b3b3b;
+        }
+
+        /* Add responsiveness */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Introduce las características del vino</h2>
+
+    <div class="form-container">
+        <form action="/" method="post">
+            <label for="val1">Alcohol:</label>
+            <input type="number" step="any" name="val1" required><br>
+
+            <label for="val2">Ácido Málico:</label>
+            <input type="number" step="any" name="val2" required><br>
+
+            <label for="val3">Cenizas:</label>
+            <input type="number" step="any" name="val3" required><br>
+
+            <label for="val4">Alcalinidad de ceniza:</label>
+            <input type="number" step="any" name="val4" required><br>
+
+            <label for="val5">Magnesio:</label>
+            <input type="number" step="any" name="val5" required><br>
+
+            <label for="val6">Fenoles Totales:</label>
+            <input type="number" step="any" name="val6" required><br>
+
+            <label for="val7">Flavanoides:</label>
+            <input type="number" step="any" name="val7" required><br>
