@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template
 import joblib
 
+# URL de despliegue en Render:
+# https://flask-render-integration-uuog.onrender.com
+
+
 app = Flask(__name__)
 
 # Cargar modelo y escalador
