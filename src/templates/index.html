@@ -102,15 +102,26 @@
             margin: 4px 0;
         }
 
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #3b3b3b;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
                 align-items: center;
             }
-            .form-container, .example-container {
+
+            .form-container,
+            .example-container {
                 width: 90%;
                 margin-bottom: 10px;
             }
+
             .form-container form {
                 grid-template-columns: 1fr;
             }
@@ -180,6 +191,13 @@
             </form>
         </div>
     </div>
+
+    <!-- Mostrar resultado si hay predicción -->
+    {% if prediction %}
+        <div class="result">
+            {{ prediction }}
+        </div>
+    {% endif %}
 
 </body>
 </html>
