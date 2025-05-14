@@ -8,72 +8,111 @@
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: #f9f3e9;
-            text-align: center;
-            padding: 30px;
             color: #3e2f2f;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            height: 100vh;
         }
 
         h2 {
             color: #7b1e1e;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 10px;
         }
 
         .form-container {
-            display: inline-block;
             background-color: #fff5e6;
-            padding: 30px;
+            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            width: 100%;
-            max-width: 800px;
-            text-align: left;
+            width: 60%;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .form-container form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 20px;
         }
 
         .form-container label {
-            font-size: 1em;
-            display: block;
-            margin: 10px 0 5px;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
 
         .form-container input[type="number"] {
-            padding: 10px;
-            width: 100%;
+            padding: 6px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            margin-bottom: 15px;
-            font-size: 1em;
+            font-size: 0.9em;
+            width: 100%;
         }
 
         .form-container input[type="submit"] {
+            grid-column: span 2;
             padding: 10px;
-            width: 100%;
             background-color: #7b1e1e;
             color: white;
             border: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.1em;
             border-radius: 5px;
-            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
         .form-container input[type="submit"]:hover {
             background-color: #5a1515;
         }
 
-        .result {
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #3b3b3b;
+        .example-container {
+            background-color: #fff0d9;
+            padding: 15px;
+            border-radius: 10px;
+            width: 35%;
+            font-size: 0.85em;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .example-container h3 {
+            margin-top: 0;
+            color: #7b1e1e;
+            font-size: 1em;
+        }
+
+        .example-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .example-container li {
+            margin: 4px 0;
         }
 
         @media (max-width: 768px) {
-            .form-container {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .form-container, .example-container {
                 width: 90%;
-                padding: 20px;
+                margin-bottom: 10px;
+            }
+            .form-container form {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -82,31 +121,64 @@
 
     <h2>Introduce las características del vino</h2>
 
-    <div class="form-container">
-        <form action="/" method="post">
-            <label for="val1">Alcohol:</label>
-            <input type="number" step="any" name="val1" required><br>
+    <div class="container">
+        <!-- Ejemplo -->
+        <div class="example-container">
+            <h3>Ejemplo de un buen vino:</h3>
+            <ul>
+                <li><strong>Acidez volátil:</strong> 0.3</li>
+                <li><strong>Ácido cítrico:</strong> 0.35</li>
+                <li><strong>Azúcar residual:</strong> 2.5</li>
+                <li><strong>Cloruros:</strong> 0.045</li>
+                <li><strong>SO₂ libre:</strong> 25</li>
+                <li><strong>SO₂ total:</strong> 100</li>
+                <li><strong>Densidad:</strong> 0.995</li>
+                <li><strong>pH:</strong> 3.3</li>
+                <li><strong>Sulfatos:</strong> 0.6</li>
+                <li><strong>Flavanoides:</strong> 2.0</li>
+                <li><strong>Alcohol:</strong> 11.5</li>
+            </ul>
+        </div>
 
-            <label for="val2">Ácido Málico:</label>
-            <input type="number" step="any" name="val2" required><br>
+        <!-- Formulario -->
+        <div class="form-container">
+            <form action="/" method="post">
+                <label for="val1">Acidez volátil:</label>
+                <input type="number" step="any" name="val1" required>
 
-            <label for="val3">Cenizas:</label>
-            <input type="number" step="any" name="val3" required><br>
+                <label for="val2">Ácido cítrico:</label>
+                <input type="number" step="any" name="val2" required>
 
-            <label for="val4">Alcalinidad de ceniza:</label>
-            <input type="number" step="any" name="val4" required><br>
+                <label for="val3">Azúcar residual:</label>
+                <input type="number" step="any" name="val3" required>
+                
+                <label for="val4">Cloruros:</label>
+                <input type="number" step="any" name="val4" required>
 
-            <label for="val5">Magnesio:</label>
-            <input type="number" step="any" name="val5" required><br>
+                <label for="val5">SO₂ libre:</label>
+                <input type="number" step="any" name="val5" required>
 
-            <label for="val6">Fenoles Totales:</label>
-            <input type="number" step="any" name="val6" required><br>
+                <label for="val6">SO₂ total:</label>
+                <input type="number" step="any" name="val6" required>
 
-            <label for="val7">Flavanoides:</label>
-            <input type="number" step="any" name="val7" required><br>
+                <label for="val7">Densidad:</label>
+                <input type="number" step="any" name="val7" required>
 
-            <input type="submit" value="Predecir">
-        </form>
+                <label for="val8">pH:</label>
+                <input type="number" step="any" name="val8" required>
+
+                <label for="val9">Sulfatos:</label>
+                <input type="number" step="any" name="val9" required>
+
+                <label for="val10">Flavanoides:</label>
+                <input type="number" step="any" name="val10" required>
+
+                <label for="val11">Alcohol:</label>
+                <input type="number" step="any" name="val11" required>
+
+                <input type="submit" value="Predecir">
+            </form>
+        </div>
     </div>
 
 </body>
