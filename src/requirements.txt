@@ -3,4 +3,5 @@ numpy>=1.24.2
 pandas>=1.5.3
 requests>=2.27.1
 scikit-learn
-Flask==2.3.0
+F
+lask==2.3.0
